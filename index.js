@@ -75,6 +75,82 @@ for (var j = 0; j < arr2.length; j++) {
   console.log("arr2[" + j + "]:", arr2[j]);
 }
 
+
+
+// arr2.forEach(foo);
+
 arr2.forEach(function (elem) {
   console.log("This is happening for each element in the array:", elem);
 });
+
+console.log("arr.join(','):", arr.join(','));
+console.log("'1,2,3,4'.split(','):", '1,2,3,4'.split(','));
+
+var stack = [];
+stack.push(1);
+stack.push(2);
+stack.push(3);
+console.log("stack:", stack);
+
+console.log("stack.pop():", stack.pop());
+console.log("stack.pop():", stack.pop());
+console.log("stack:", stack);
+
+stack = [];
+
+console.log("\n=================");
+console.log("== Functions");
+console.log("=================\n");
+
+function foo () {
+  console.log("This is a function foo()");
+}
+
+foo();
+
+function addArgs(a, b, c) {
+  return a + b + c;
+}
+
+console.log("addArgs(1, 2, 3):", addArgs(1, 2, 3));
+console.log("addArgs('1', '2', '3'):", addArgs('1', '2', '3'));
+
+function addArgs2() {
+  console.log("addArgs2() arguments:", arguments);
+  var sum = arguments[0];
+  for (var j = 1; j < arguments.length; j++) {
+    sum += arguments[j];
+  }
+  return sum;
+}
+
+console.log("addArgs2(1, 2, 3):", addArgs2(1, 2, 3));
+console.log("addArgs2(1, 2, 3, 4, 5, 6):", addArgs2(1, 2, 3, 4, 5, 6));
+
+var results = null;
+function doHttpRequest() {
+  results = "These are the results";
+}
+
+doHttpRequest();
+console.log("results:", results);
+
+
+console.log("\n=================");
+console.log("== Objects");
+console.log("=================\n");
+
+var person = {
+  "firstName": "Luke",
+  "lastName": "Skywalker",
+  "grades": ["A", "A", "C-", "B"]
+};
+
+console.log("person['firstName']:", person['firstName']);
+console.log("person.firstName:", person.firstName);
+var property = "firstName";
+console.log("person[property]:", person[property]);
+
+Object.keys(person).forEach(function (key) {
+  console.log("key:", key, "value:", person[key]);
+})
